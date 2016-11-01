@@ -1,0 +1,1 @@
+export const ADD_PASSAGE = 'ADD_PASSAGE';
