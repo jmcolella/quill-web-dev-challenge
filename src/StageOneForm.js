@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { initialPassage } from './actions/actions';
+import { initialPassage } from './actions/app_actions';
 
 const StageOneForm = ( props, context ) => {
   let input;
