@@ -1,23 +1,36 @@
 import React, { Component } from 'react';
-const logo = '//d2t498vi8pate3.cloudfront.net/assets/home-header-logo-8d37f4195730352f0055d39f7e88df602e2d67bdab1000ac5886c5a492400c9d.png';
+import { connect } from 'react-redux';
+import AppHeader from './AppHeader';
+import StageOneForm from './StageOneForm';
 import './App.css';
 
 class App extends Component {
   render() {
+    const { store, initial } = this.props;
+    let render;
+    if ( initial.stageOne ) {
+      render =
+        <StageOneForm
+          store={ store }/>
+    } else {
+      render =
+        <p>Stage Two</p>
+    }
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to the Quill Web Dev Challenge</h2>
-        </div>
-        <p className="App-intro">
-          Refer to the <a href="https://github.com/empirical-org/quill-web-dev-challenge" target="_blank">README</a> for the instructions to this challenge.
-          <br/>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <AppHeader />
+        { render }
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    initial: state.initial
+  }
+};
+
+export default connect(
+  mapStateToProps
+)(App);
