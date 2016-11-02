@@ -6,3 +6,18 @@ export function initialPassage ( input ) {
     passage: input
   }
 };
+
+export function changeInitialPassage ( input ) {
+  return {
+    type: constants.CHANGE_PASSAGE,
+    passage: input
+  }
+}
+
+// export function comparePassages ( initial, change ) {
+//   return {
+//     type: constants.COMPARE_PASSAGES,
+//     initialPassage: initial,
+//     changePassage: change
+//   }
+// }

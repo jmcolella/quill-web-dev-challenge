@@ -17,6 +17,23 @@ const initial = (
   }
 };
 
+const change = (
+  state = {
+    passage: ""
+  },
+  action
+) => {
+  switch ( action.type ) {
+    case constants.CHANGE_PASSAGE:
+      return Object.assign({}, state, {
+        passage: action.passage
+      });
+    default:
+      return state;
+  }
+}
+
 export const passageApp = combineReducers({
-  initial: initial
+  initial: initial,
+  change: change
 });
