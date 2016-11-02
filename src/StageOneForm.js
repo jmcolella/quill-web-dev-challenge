@@ -7,6 +7,7 @@ const StageOneForm = ( props, context ) => {
 
   return (
     <div>
+      <h1>Stage One</h1>
       <textarea
           ref={ node => {
             input = node
