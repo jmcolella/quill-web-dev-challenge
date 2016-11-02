@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AppHeader from './AppHeader';
 import StageOneForm from './StageOneForm';
+import StageTwoForm from './StageTwoForm';
 import './App.css';
 
 class App extends Component {
   render() {
-    const { store, initial } = this.props;
+    const { store, initial, change } = this.props;
     let render;
     if ( initial.stageOne ) {
       render =
@@ -14,7 +15,10 @@ class App extends Component {
           store={ store }/>
     } else {
       render =
-        <p>Stage Two</p>
+        <StageTwoForm
+          store={ store }
+          initial={ initial }
+          change={ change } />
     }
     return (
       <div className="App">
@@ -27,7 +31,8 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    initial: state.initial
+    initial: state.initial,
+    change: state.change
   }
 };
 
