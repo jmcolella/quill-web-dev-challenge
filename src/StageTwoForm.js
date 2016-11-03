@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { changeInitialPassage } from './actions/app_actions';
+import { changeInitialPassage, comparePassages } from './actions/app_actions';
 
 const StageTwoForm = ( props, context ) => {
   let input;
@@ -22,9 +22,9 @@ const StageTwoForm = ( props, context ) => {
       </textarea>
 
       <button
-        // onClick={
-        //   () => props.dispatch(comparePassages( state.initial.passage, input.value ) )
-        // }
+        onClick={
+          () => props.dispatch(comparePassages( props.initial.passage, input.value ) )
+        }
       >
         Next
       </button>
