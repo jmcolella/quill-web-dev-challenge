@@ -14,10 +14,10 @@ export function changeInitialPassage ( input ) {
   }
 }
 
-// export function comparePassages ( initial, change ) {
-//   return {
-//     type: constants.COMPARE_PASSAGES,
-//     initialPassage: initial,
-//     changePassage: change
-//   }
-// }
+export function comparePassages ( initial, change ) {
+  return {
+    type: constants.COMPARE_PASSAGES,
+    initialPassage: initial,
+    changePassage: change
+  }
+}
