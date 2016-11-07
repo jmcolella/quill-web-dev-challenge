@@ -8,6 +8,7 @@ import './App.css';
 
 class App extends Component {
   render() {
+    debugger;
     const { initial, change, compare } = this.props;
     let render;
     if ( compare.stageThree ) {

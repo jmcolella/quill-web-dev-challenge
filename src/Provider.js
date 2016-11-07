@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Provider extends Component {
   getChildContext() {
@@ -15,4 +16,4 @@ Provider.childContextTypes = {
   store: React.PropTypes.object
 };
 
-export default Provider;
+export default connect()( Provider );
