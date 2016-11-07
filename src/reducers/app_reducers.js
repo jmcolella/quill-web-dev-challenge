@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import * as constants from '../constants/app_constants';
 
-const initial = (
+export const initial = (
   state = { passage: "" },
   action
 ) => {
@@ -15,7 +15,7 @@ const initial = (
   }
 };
 
-const change = (
+export const change = (
   state = {
     passage: "",
     stageTwo: false
@@ -41,7 +41,7 @@ const change = (
   }
 }
 
-const formatArray = ( string ) => {
+export const formatArray = ( string ) => {
   for ( let i = 0; i < string.length; i++ ) {
     if ( string[i] === "\n" ) {
       string = string.replace(string[i], " ");
@@ -51,7 +51,7 @@ const formatArray = ( string ) => {
   return string.split(" ");
 }
 
-const compareLogic = ( initial, change ) => {
+export const compareLogic = ( initial, change ) => {
   let initialArr = formatArray( initial );
   let changeArr = formatArray( change );
   let finalArr = [];
@@ -86,7 +86,7 @@ const compareLogic = ( initial, change ) => {
   return finalArr;
 }
 
-const compare = (
+export const compare = (
   state = {
     comparison: [],
     stageThree: false
