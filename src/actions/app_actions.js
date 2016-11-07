@@ -19,13 +19,19 @@ export function changeInitialPassage ( input ) {
     type: constants.CHANGE_PASSAGE,
     passage: input
   }
-}
+};
 
 export function goBackInitial () {
   return {
     type: constants.GO_BACK_INITIAL
   }
-}
+};
+
+export function goBackChange () {
+  return {
+    type: constants.GO_BACK_CHANGE
+  }
+};
 
 export function comparePassages ( initial, change ) {
   return {
@@ -33,4 +39,4 @@ export function comparePassages ( initial, change ) {
     initialPassage: initial,
     changePassage: change
   }
-}
+};

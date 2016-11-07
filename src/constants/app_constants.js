@@ -2,4 +2,5 @@ export const INITIAL = 'INITIAL';
 export const ADD_PASSAGE = 'ADD_PASSAGE';
 export const CHANGE_PASSAGE = 'CHANGE_PASSAGE';
 export const GO_BACK_INITIAL = 'GO_BACK_INITIAL';
+export const GO_BACK_CHANGE = 'GO_BACK_CHANGE';
 export const COMPARE_PASSAGES = 'COMPARE_PASSAGES';

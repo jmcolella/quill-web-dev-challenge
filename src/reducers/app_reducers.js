@@ -99,6 +99,10 @@ const compare = (
         comparison: compareLogic( action.initialPassage, action.changePassage ),
         stageThree: true
       });
+    case constants.GO_BACK_CHANGE:
+      return Object.assign({}, state, {
+        stageThree: false
+      });
     default:
       return state;
   }
