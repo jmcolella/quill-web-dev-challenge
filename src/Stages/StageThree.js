@@ -11,6 +11,8 @@ class StageThree extends Component {
     let { compare } = this.props;
     return (
       <div className="container">
+        <h1>Stage Three</h1>
+        <p>Assign concepts to the grammatical differences between the correct passage and the incorrect passage.</p>
         <form>
           <div className="heading">
             <div className="form-items">

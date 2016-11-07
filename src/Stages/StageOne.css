@@ -1,3 +1,7 @@
+h1 {
+  color: #00c2a2;
+}
+
 textarea {
   height: 200px;
   width: 400px;
@@ -13,5 +17,9 @@ button {
   padding: 1em 4em;
   background-color: white;
   border: 1px solid #00c2a2;
+  color: #00c2a2;
+}
+
+.continue-text {
   color: #00c2a2;
 }
