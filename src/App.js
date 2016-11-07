@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AppHeader from './AppHeader';
-import StageOneForm from './StageOneForm';
-import StageTwoForm from './StageTwoForm';
-import StageThree from './StageThree';
+import StageOneForm from './Stages/StageOneForm';
+import StageTwoForm from './Stages/StageTwoForm';
+import StageThree from './Stages/StageThree';
 import './App.css';
 
 class App extends Component {
