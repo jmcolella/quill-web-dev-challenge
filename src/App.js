@@ -8,22 +8,19 @@ import './App.css';
 
 class App extends Component {
   render() {
-    const { store, initial, change, compare } = this.props;
+    const { initial, change, compare } = this.props;
     let render;
     if ( initial.stageOne ) {
       render =
         <StageOne
-          initial={ initial }
-          store={ store }/>
+          initial={ initial } />
     } else if ( compare.stageThree ) {
       render =
         <StageThree
-          store={ store }
           compare={ compare } />
     } else {
       render =
         <StageTwo
-          store={ store }
           initial={ initial }
           change={ change } />
     }
@@ -35,6 +32,10 @@ class App extends Component {
     );
   }
 }
+
+App.contextTypes = {
+  store: React.PropTypes.object
+};
 
 function mapStateToProps(state) {
   return {
