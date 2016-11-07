@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CompareItem from './CompareItem';
 import './StageThree.css';
-import'./App.css';
+import'../App.css';
 
 class StageThree extends Component {
   render() {

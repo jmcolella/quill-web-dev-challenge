@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { changeInitialPassage, goBackInitial, comparePassages } from './actions/app_actions';
+import { changeInitialPassage, goBackInitial, comparePassages } from '../actions/app_actions';
 import './StageOne.css';
 
 const StageTwoForm = ( props, context ) => {
@@ -23,7 +23,7 @@ const StageTwoForm = ( props, context ) => {
       >
       </textarea>
 
-       <button
+      <button
         onClick={
           () => props.dispatch( goBackInitial() )
         }
