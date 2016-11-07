@@ -44,8 +44,8 @@ const formatArray = ( string ) => {
 }
 
 const compareLogic = ( initial, change ) => {
-  let initialArr = initial.split(" ");
-  let changeArr = change.split(" ");
+  let initialArr = formatArray( initial );
+  let changeArr = formatArray( change );
   let finalArr = [];
 
   for ( let i = 0; i < initialArr.length; i++ ) {
