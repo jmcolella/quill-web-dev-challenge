@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { goBackChange } from '../actions/app_actions';
 import CompareItem from './CompareItem';
+import './StageOne.css';
 import './StageThree.css';
 import'../App.css';
 
@@ -31,6 +33,14 @@ class StageThree extends Component {
           }
           <input type="submit" value="submit" />
         </form>
+
+        <button
+          onClick={
+            () => this.props.dispatch( goBackChange() )
+          }
+        >
+          Back
+        </button>
       </div>
     );
   };

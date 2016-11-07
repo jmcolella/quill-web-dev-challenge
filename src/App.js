@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AppHeader from './AppHeader';
-import StageOneForm from './Stages/StageOneForm';
-import StageTwoForm from './Stages/StageTwoForm';
+import StageOne from './Stages/StageOne';
+import StageTwo from './Stages/StageTwo';
 import StageThree from './Stages/StageThree';
 import './App.css';
 
@@ -12,7 +12,7 @@ class App extends Component {
     let render;
     if ( initial.stageOne ) {
       render =
-        <StageOneForm
+        <StageOne
           initial={ initial }
           store={ store }/>
     } else if ( compare.stageThree ) {
@@ -22,7 +22,7 @@ class App extends Component {
           compare={ compare } />
     } else {
       render =
-        <StageTwoForm
+        <StageTwo
           store={ store }
           initial={ initial }
           change={ change } />
