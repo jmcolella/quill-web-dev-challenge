@@ -33,21 +33,46 @@ const change = (
   }
 }
 
+const formatArray = ( string ) => {
+  for ( let i = 0; i < string.length; i++ ) {
+    if ( string[i] === "\n" ) {
+      string = string.replace(string[i], " ");
+    }
+  }
+
+  return string.split(" ");
+}
+
 const compareLogic = ( initial, change ) => {
   let initialArr = initial.split(" ");
   let changeArr = change.split(" ");
   let finalArr = [];
 
   for ( let i = 0; i < initialArr.length; i++ ) {
-    // issues with new line characters
-    // how to put together a series of comma changes?
     if ( initialArr[i] !== changeArr[i] ) {
-      finalArr.push(
-        {
-          initial: initialArr[i],
-          change: changeArr[i],
+      if ( initialArr[i].includes(",") && !changeArr[i].includes(",") ) {
+        let tempInitialString = "";
+        let tempChangeString = "";
+        while ( initialArr[i].includes(",") && !changeArr[i].includes(",") ) {
+          tempInitialString += initialArr[i] + " ";
+          tempChangeString += changeArr[i] + " ";
+          i++
         }
-      )
+        finalArr.push(
+          {
+            initial: tempInitialString,
+            change: tempChangeString,
+          }
+        )
+
+      } else {
+        finalArr.push(
+          {
+            initial: initialArr[i],
+            change: changeArr[i],
+          }
+        )
+      }
     }
   }
   return finalArr;
