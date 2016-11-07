@@ -13,6 +13,7 @@ class App extends Component {
     if ( initial.stageOne ) {
       render =
         <StageOneForm
+          initial={ initial }
           store={ store }/>
     } else if ( compare.stageThree ) {
       render =

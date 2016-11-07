@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { changeInitialPassage, comparePassages } from './actions/app_actions';
+import { changeInitialPassage, goBackInitial, comparePassages } from './actions/app_actions';
+import './StageOne.css';
 
 const StageTwoForm = ( props, context ) => {
   let input;
@@ -8,6 +9,7 @@ const StageTwoForm = ( props, context ) => {
   return (
     <div>
       <h1>Stage Two</h1>
+      <p>Make gramtically incorrect edits to the passage written in the previous stage.</p>
       <textarea
           ref={ node => {
             input = node
@@ -20,6 +22,14 @@ const StageTwoForm = ( props, context ) => {
           }
       >
       </textarea>
+
+       <button
+        onClick={
+          () => props.dispatch( goBackInitial() )
+        }
+      >
+        Back
+      </button>
 
       <button
         onClick={
