@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { addInitialPassage, goStageTwo } from '../actions/app_actions';
 import './StageOne.css';
 
-const StageOneForm = ( props, context ) => {
+const StageOne = ( props, context ) => {
   let input;
 
   return (
@@ -21,16 +21,21 @@ const StageOneForm = ( props, context ) => {
           placeholder="Add gramtically correct passage here...">
       </textarea>
 
-      <button
-        onClick={
-          () => props.dispatch(goStageTwo() )
-        }
-      >
-        Next
-      </button>
+      {
+        props.initial.passage === "" ?
+          <p className="continue-text">Please enter a passage to continue.</p> :
+          <button
+            onClick={
+              () => props.dispatch( goStageTwo() )
+            }
+          >
+            Next
+          </button>
+      }
+
 
     </div>
   )
 };
 
-export default connect()(StageOneForm);
+export default connect()(StageOne);
