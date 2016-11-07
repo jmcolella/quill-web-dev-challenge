@@ -7,10 +7,18 @@ const initial = (
   action
 ) => {
   switch ( action.type ) {
+    case constants.INITIAL:
+      return Object.assign({}, state, {
+        passage: action.passage
+      });
     case constants.ADD_PASSAGE:
       return Object.assign({}, state, {
         passage: action.passage,
         stageOne: false
+      });
+    case constants.GO_BACK_INITIAL:
+      return Object.assign({}, state, {
+        stageOne: true
       });
     default:
       return state;
