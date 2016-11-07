@@ -10,19 +10,19 @@ class App extends Component {
   render() {
     const { initial, change, compare } = this.props;
     let render;
-    if ( initial.stageOne ) {
-      render =
-        <StageOne
-          initial={ initial } />
-    } else if ( compare.stageThree ) {
+    if ( compare.stageThree ) {
       render =
         <StageThree
           compare={ compare } />
-    } else {
+    } else if ( change.stageTwo ) {
       render =
         <StageTwo
           initial={ initial }
           change={ change } />
+    } else {
+      render =
+        <StageOne
+          initial={ initial } />
     }
     return (
       <div className="App">

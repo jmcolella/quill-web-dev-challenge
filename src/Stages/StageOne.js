@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { initialPassage, addInitialPassage } from '../actions/app_actions';
+import { addInitialPassage, goStageTwo } from '../actions/app_actions';
 import './StageOne.css';
 
 const StageOneForm = ( props, context ) => {
@@ -15,7 +15,7 @@ const StageOneForm = ( props, context ) => {
             input = node
           }}
           onChange={
-            () => props.dispatch( initialPassage( input.value ) )
+            () => props.dispatch( addInitialPassage( input.value ) )
           }
           value={ props.initial.passage }
           placeholder="Add gramtically correct passage here...">
@@ -23,7 +23,7 @@ const StageOneForm = ( props, context ) => {
 
       <button
         onClick={
-          () => props.dispatch(addInitialPassage( input.value ) )
+          () => props.dispatch(goStageTwo() )
         }
       >
         Next

@@ -33,12 +33,11 @@ const StageTwoForm = ( props, context ) => {
 
       <button
         onClick={
-          () => props.dispatch(comparePassages( props.initial.passage, input.value ) )
+          () => props.dispatch( comparePassages( props.initial.passage, input.value ) )
         }
       >
         Next
       </button>
-
     </div>
   )
 };
