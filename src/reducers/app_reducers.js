@@ -2,23 +2,13 @@ import { combineReducers } from 'redux';
 import * as constants from '../constants/app_constants';
 
 const initial = (
-  state =
-    { passage: "", stageOne: true },
+  state = { passage: "" },
   action
 ) => {
   switch ( action.type ) {
-    case constants.INITIAL:
+    case constants.ADD_INITIAL_PASSAGE:
       return Object.assign({}, state, {
         passage: action.passage
-      });
-    case constants.ADD_PASSAGE:
-      return Object.assign({}, state, {
-        passage: action.passage,
-        stageOne: false
-      });
-    case constants.GO_BACK_INITIAL:
-      return Object.assign({}, state, {
-        stageOne: true
       });
     default:
       return state;
@@ -27,14 +17,24 @@ const initial = (
 
 const change = (
   state = {
-    passage: ""
+    passage: "",
+    stageTwo: false
   },
   action
 ) => {
   switch ( action.type ) {
+    case constants.GO_STAGE_TWO:
+      return Object.assign({}, state, {
+        stageTwo: true
+      });
     case constants.CHANGE_PASSAGE:
       return Object.assign({}, state, {
         passage: action.passage
+      });
+    case constants.GO_BACK_INITIAL:
+      return Object.assign({}, state, {
+        passage: "",
+        stageTwo: false
       });
     default:
       return state;

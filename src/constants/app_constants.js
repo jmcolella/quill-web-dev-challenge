@@ -1,5 +1,5 @@
-export const INITIAL = 'INITIAL';
-export const ADD_PASSAGE = 'ADD_PASSAGE';
+export const ADD_INITIAL_PASSAGE = 'ADD_INITIAL_PASSAGE';
+export const GO_STAGE_TWO = 'GO_STAGE_TWO';
 export const CHANGE_PASSAGE = 'CHANGE_PASSAGE';
 export const GO_BACK_INITIAL = 'GO_BACK_INITIAL';
 export const GO_BACK_CHANGE = 'GO_BACK_CHANGE';

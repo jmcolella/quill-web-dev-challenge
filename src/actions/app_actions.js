@@ -1,16 +1,16 @@
 import * as constants from '../constants/app_constants';
 
-export function initialPassage ( input ) {
+
+export function addInitialPassage ( input ) {
   return {
-    type: constants.INITIAL,
+    type: constants.ADD_INITIAL_PASSAGE,
     passage: input
   }
 };
 
-export function addInitialPassage ( input ) {
+export function goStageTwo () {
   return {
-    type: constants.ADD_PASSAGE,
-    passage: input
+    type: constants.GO_STAGE_TWO
   }
 };
 
